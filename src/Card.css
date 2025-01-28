@@ -1,0 +1,21 @@
+.card {
+    padding: 2em;
+    border: 3px black dashed;
+    width: 300px;
+  }
+  
+  .non-binaire{
+    background-color: lemonchiffon;
+  }
+  
+  .homme {
+    background-color: lightblue;
+  }
+  
+  .femme {
+    background-color: pink;
+  }
+
+  .border {
+    border: 3px solid red;
+  }
