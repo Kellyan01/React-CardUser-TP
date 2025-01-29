@@ -10,3 +10,7 @@ section{
   justify-content: center;
   gap : 1rem;
 }
+
+input {
+  margin-bottom: 30px;
+}

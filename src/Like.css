@@ -1,0 +1,16 @@
+.divLike {
+    display: flex;
+    align-items: center;
+}
+
+.divLike div {
+    border-radius: 50%;
+    width: 30px;
+    height : 30px;
+    background-color: grey;
+    margin-right: 10px;
+}
+
+.divLike .like {
+    background-color: red;
+}

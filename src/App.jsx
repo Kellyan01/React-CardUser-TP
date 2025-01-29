@@ -1,5 +1,6 @@
 import './App.css'
 import Card from './Card.jsx'
+import {useState} from 'react'
 
 const USERS = [
   {image : "https://picsum.photos/200", pseudo : 'John Doe', email : 'j.doe@anonymous.com', description : 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus enim, ab veniam temporibus cumque dolorem omnis in consectetur architecto animi error, dignissimos ea magnam blanditiis eius officiis, necessitatibus quis maxime?', genre : 'non-binaire'},
@@ -8,12 +9,21 @@ const USERS = [
 ]
 
 function App() {
+  const [search, setSearch] = useState('')
+
+  const USERS_LIST = USERS.filter(element => {
+    if(!element.pseudo.includes(search)){
+      return false
+    }
+    return true
+  })
 
   return (
     <>
       <h1>Liste des Utilisateurs</h1>
+      <input type="text" onChange={(event)=>setSearch(event.target.value)} />
       <section>
-        {USERS.map((user, index) => (<Card key={index} pseudo={user.pseudo} image={user.image} email={user.email} genre={user.genre} description={user.description}/>))}
+        {USERS_LIST.map((user, index) => (<Card key={index} pseudo={user.pseudo} image={user.image} email={user.email} genre={user.genre} description={user.description}/>))}
       </section>
       {USERS.length > 0 && <p>il y a {USERS.length} utilisateurs inscrits !</p>}
     </>
